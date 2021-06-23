@@ -16,5 +16,5 @@ class Command(BaseCommand):
             next(phone_reader)
 
             for line in phone_reader:
-                Phone.objects.create(name=line[1], price=line[2], release_date=line[3])
+                Phone.objects.create(name=line[1], price=line[2], release_date=line[4], image=line[3])
                 pass

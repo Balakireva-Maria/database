@@ -4,8 +4,10 @@ from django.db import models
 class Phone(models.Model):
 
     name = models.TextField()
-    price = models.TextField()
-    image = models.TextField()
+    price = models.IntegerField()
+    image = models.ImageField()
     release_date = models.TextField()
-    lte_exists = models.TextField()
-    slug = models.TextField()
+    slug = models.BooleanField()
+
+def __str__(self):
+    return

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from work_with_database.phones.models import Phone
-
+phones_list =[]
 
 def show_catalog(request):
     template = 'catalog.html'
@@ -11,6 +11,8 @@ def show_catalog(request):
 
 def show_product(request, slug):
     template = 'product.html'
-    phone = Phone.objects.all()
-    context = {'phone': phone}
+    phones = Phone.objects.all()
+    if phones.filter(slug=True):
+        phones_list.append(phones)
+    context = {'phone': phones_list}
     return render(request, template, context)
